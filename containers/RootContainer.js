@@ -10,7 +10,7 @@ import { ApplicationProvider,  IconRegistry, } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, light as lightTheme } from '@eva-design/eva';
 
-import MainNavigation from '~/navigation/MainNavigation';
+import MainNavigation, { Links } from '~/navigation/MainNavigation';
 
 const NavigationKey = "NAVIGATION_STATE";
 
@@ -50,6 +50,7 @@ export default function RootContainer() {
 
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
         <NavigationContainer
+          linking={Links}
           initialState={initialNavigationState}
           onStateChange={(state) =>
             AsyncStorage.setItem(NavigationKey, JSON.stringify(state))

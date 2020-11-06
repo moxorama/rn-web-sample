@@ -3,14 +3,21 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import BottomTabBar from './BottomTabBar';
-import TabBarIcon from './TabBarIcon';
 
 import DashboardNavigation from './DashboardNavigation';
 import ProfileNavigation from './ProfileNavigation';
 
 const BottomTabs = createBottomTabNavigator();
 
-export default function MainNavigation({ navigation, route, visits }) {
+const Links = {
+  prefixes: ['http://localhost', 'myapp://'],
+  screens: {
+    Dashboard: 'dashboard',
+    Profile: 'user',
+  },
+}
+
+function MainNavigation({ navigation, route, visits }) {
   // Set the header title on the parent stack navigator depending on the
   // currently active tab. Learn more in the documentation:
   // https://reactnavigation.org/docs/en/screen-options-resolution.html
@@ -30,4 +37,7 @@ export default function MainNavigation({ navigation, route, visits }) {
     </BottomTabs.Navigator>
   );
 }
+
+export default MainNavigation;
+export { Links };
 

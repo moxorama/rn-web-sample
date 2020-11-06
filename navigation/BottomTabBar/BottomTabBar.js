@@ -5,8 +5,6 @@ import { BottomNavigation, BottomNavigationTab, useTheme } from '@ui-kitten/comp
 
 import _ from 'lodash';
 
-import TabBarIcon from '~/navigation/TabBarIcon';
-
 const BottomTabBar = (props) => {
   const { state, user } = props; 
 
@@ -25,12 +23,10 @@ const BottomTabBar = (props) => {
         style={{ borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: theme['border-basic-color-4'], paddingVertical: 0 }}
       >
         <BottomNavigationTab
-          title="Dashboard"
-          icon={(props) => (<TabBarIcon {...props} iconName="file-text-outline" />)}
+          title="DASHBOARD"
         />
         <BottomNavigationTab
-          title="Profile"
-          icon={(props) => (<TabBarIcon {...props} iconName="person" />)}
+          title="PROFILE"
         />
       </BottomNavigation>
     </SafeAreaView>
