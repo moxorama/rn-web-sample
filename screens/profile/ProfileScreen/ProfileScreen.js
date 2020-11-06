@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -13,6 +13,10 @@ import styles from './ProfileScreenStyle'
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    console.log('Portfolio mount')
+  },[])
 
 
   const handlePressLogout = () => {
@@ -47,7 +51,7 @@ export default function ProfileScreen() {
         <ListItem
           style={styles.listItem}
           title="Transactions"
-          accessory={renderIcon}
+          accessoryRight={renderIcon}
           onPress={() => navigation.navigate('TransactionsScreen')}
         />
         <Divider />
